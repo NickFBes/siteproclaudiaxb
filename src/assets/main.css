@@ -1,0 +1,152 @@
+/* ===========================
+   MAIN.CSS – Estilos Globais
+   Tema: Brasil Profissional (Verde Claro)
+   =========================== */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&family=Cormorant+Garamond:wght@500&display=swap');
+
+
+/* 🎨 Variáveis de Tema */
+:root {
+  --color-bg: #fdfdfd;
+  --color-text: #1a1a1a;
+  --color-text-light: #ffffff;
+  --color-primary: #009739;     /* Verde Brasil mais claro */
+  --color-secondary: #007f33;   /* Verde secundário escuro */
+  --color-hover: #f9d45c;       /* Dourado elegante */
+
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  --font-base: 'Inter', sans-serif;
+  --font-serif: 'Merriweather', serif;
+  --font-cursive: 'Cormorant Garamond', serif;
+
+  --radius: 8px;
+  --shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* ✨ Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-base);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+/* 🖋️ Tipografia */
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+/* 🔗 Links */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--color-hover);
+}
+
+/* 🔘 Botões */
+button,
+.btn {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  padding: 0.75em 1.5em;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+button:hover,
+.btn:hover {
+  background-color: var(--color-hover);
+  transform: translateY(-2px);
+  color: var(--color-black);
+}
+
+/* 📦 Containers e Layout */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* 🧱 Elementos reutilizáveis */
+.card {
+  background-color: var(--color-white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+/* 💡 Header e Footer personalizados */
+.header,
+.footer {
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+}
+
+.header a,
+.footer a {
+  color: var(--color-text-light);
+}
+
+.header a:hover,
+.footer a:hover {
+  color: var(--color-hover);
+}
+
+/* 📱 Responsividade básica */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  .container {
+    padding: 0.75rem;
+  }
+}
