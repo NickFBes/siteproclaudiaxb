@@ -24,7 +24,7 @@ onUnmounted(() => {
     <ul class="nav-links">
       <li><a href="#accueil">Accueil</a></li>
       <li><a href="#apropos">À propos</a></li>
-      <li><a href="#">Le Portugais</a></li>
+      <li><a href="#le-portugais">Le Portugais</a></li>
       <li><a href="#prestations">Prestations</a></li>
       <li><a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?metodo=apresentar&id=K4762383T4">CV</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -37,7 +37,7 @@ onUnmounted(() => {
 <section id="accueil" class="hero no-bg">
   <div class="hero-content" data-aos="fade-up">
     <h2>Traductions<br />& Cours de Langues</h2>
-    <p class="subtitle">Français ↔ Portugais</p>
+    <p class="subtitle">Portugais ↔ Français</p>
 
     <p class="intro">
       Claudia Xatara Bonnet est traductrice  
@@ -54,6 +54,68 @@ onUnmounted(() => {
     <a href="#contact" class="btn">Demander un devis</a>
   </div>
 </section>
+
+<!-- Le Portugais Section -->
+<section id="le-portugais" class="section le-portugais">
+  <h3>Le Portugais</h3>
+  <div class="langue-description" data-aos="fade-up">
+    <p>
+      Le portugais est la langue officielle de plus de <strong>260 millions</strong> de personnes
+      à travers le monde. C’est la <strong>5e langue la plus utilisée sur Internet</strong>.
+    </p>
+    <p>
+      Elle est parlée dans <strong>9 pays membres de l’ONU</strong> et dans <strong>1 région administrative spéciale</strong>
+      de la République populaire de Chine.
+    </p>
+
+    <img src="/portugaisimg2.png" alt="Carte des pays lusophones"
+         class="lusophonie-img" loading="lazy" />
+
+    <ul class="liste-pays">
+      <li><img
+  src="https://flagcdn.com/ao.svg"
+  width="25"
+  alt="Angola"> Angola</li>
+      <li><img
+  src="https://flagcdn.com/br.svg"
+  width="25"
+  alt="Brésil"> Brésil</li>
+      <li><img
+  src="https://flagcdn.com/cv.svg"
+  width="25"
+  alt="Cap-Vert"> Cap-Vert</li>
+      <li><img
+  src="https://flagcdn.com/gq.svg"
+  width="25"
+  alt="Guinée équatoriale"> Guinée équatoriale</li>
+      <li><img
+  src="https://flagcdn.com/gw.svg"
+  width="25"
+  alt="Guinée-Bissau"> Guinée-Bissau</li>
+      <li><img
+  src="https://flagcdn.com/mo.svg"
+  width="25"
+  alt="Macao"> Macao</li>
+      <li><img
+  src="https://flagcdn.com/mz.svg"
+  width="25"
+  alt="Mozambique"> Mozambique</li>
+      <li><img
+  src="https://flagcdn.com/pt.svg"
+  width="25"
+  alt="Portugal"> Portugal</li>
+      <li><img
+  src="https://flagcdn.com/st.svg"
+  width="25"
+  alt="São Tomé et Príncipe"> São Tomé et Príncipe</li>
+      <li><img
+  src="https://flagcdn.com/tl.svg"
+  width="25"
+  alt="Timor-Leste">Timor-Leste</li>
+    </ul>
+  </div>
+</section>
+
 
 
     <!-- Prestations Section -->
@@ -165,8 +227,6 @@ onUnmounted(() => {
   border-radius: 1rem;
   max-width: 900px;
   box-shadow: var(--shadow);
-  
-  -webkit-backdrop-filter: blur(4px); /* suporte para Safari */
 }
 
 .hero-content h2 {
@@ -219,6 +279,51 @@ onUnmounted(() => {
 .section {
   padding: 5rem 1.5rem;
 }
+
+.le-portugais h3 {
+  font-size: 2rem;
+  font-family: var(--font-serif);
+  text-align: center;
+  color: var(--color-primary);
+  margin-bottom: 2rem;
+}
+
+.langue-description {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--color-text);
+}
+
+.langue-description strong {
+  color: var(--color-primary);
+}
+
+.liste-pays {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem 2rem;
+  margin-top: 2rem;
+  padding: 0;
+  list-style: none;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.lusophonie-img {
+  margin: 2rem auto;
+  max-width: 100%;
+  width: 300px;
+  height: auto;
+  border-radius: 1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  display: block;
+}
+
+
 
 .prestations h3,
 .contact h3 {
@@ -273,7 +378,7 @@ onUnmounted(() => {
   background-color: var(--color-primary);
   color: var(--color-white);
   font-size: 0.875rem;
-  padding: 1.5rem;
+  padding: 0.5rem;
   text-align: center;
 }
 </style>
