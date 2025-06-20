@@ -95,7 +95,7 @@ button,
 button:hover,
 .btn:hover {
   background-color: var(--color-hover);
-  transform: translateY(-2px);
+  
   color: var(--color-black);
 }
 
@@ -135,6 +135,9 @@ button:hover,
 .footer a:hover {
   color: var(--color-hover);
 }
+
+
+
 
 /* 📱 Responsividade básica */
 @media (max-width: 768px) {

@@ -5,9 +5,7 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 import { createI18n } from 'vue-i18n'
 import { MotionPlugin } from '@vueuse/motion'
-import './assets/main.css';
-
-
+import './assets/main.css'
 
 const i18n = createI18n({
   locale: 'fr',
@@ -19,9 +17,16 @@ const i18n = createI18n({
 })
 
 const app = createApp(App)
+
 app.use(router)
 app.use(i18n)
 app.use(MotionPlugin)
-app.mount('#app')
 
-AOS.init()
+// Inicializar AOS após o app carregar
+app.mount('#app')
+AOS.init({
+  duration: 800,
+  easing: 'ease-in-out',
+  once: false, // anima só na primeira vez
+  offset: 300// distância antes de ativar
+})
