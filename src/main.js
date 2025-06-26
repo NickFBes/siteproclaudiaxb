@@ -6,6 +6,8 @@ import 'aos/dist/aos.css'
 import { createI18n } from 'vue-i18n'
 import { MotionPlugin } from '@vueuse/motion'
 import './assets/main.css'
+import '@fortawesome/fontawesome-free/css/all.css'
+
 
 const i18n = createI18n({
   locale: 'fr',

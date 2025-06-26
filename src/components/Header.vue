@@ -90,37 +90,82 @@ onUnmounted(() => {
 
 .site-title {
   font-family: var(--font-cursive);
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 700;
   color: var(--color-white);
+  padding: 0.4rem 0.8rem;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(2px);
+  transition: all 0.3s ease-in-out;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
+
+
+.site-title:hover {
+  box-shadow: 0 0 10px var(--color-hover);
+  border-color: var(--color-hover);
+}
+
 
 .nav {
   max-width: 1200px;
   margin: 0 auto;
   padding: 1rem 1.5rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
 }
+
 
 .nav-links {
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
   font-size: 1rem;
   font-weight: 600;
   list-style: none;
+  align-items: center;
 }
 
-.nav-links a {
+.nav-links li {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links li > * {
+  position: relative;
+  padding: 0.5rem 0;
   color: var(--color-white);
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
+  white-space: nowrap; /* 🔒 evita quebra como "Le ↩ Portugais" */
+  display: inline-block;
 }
 
-.nav-links a:hover {
-  color: var(--color-hover);
+.nav-links li > *::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  height: 3px;
+  width: 0%;
+  background-color: var(--color-hover);
+  transition: width 0.3s ease, left 0.3s ease;
 }
+
+.nav-links li > *:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+
+
 
 /* Botão hamburguer */
 .burger {
@@ -131,7 +176,9 @@ onUnmounted(() => {
   border: none;
   cursor: pointer;
   z-index: 60;
+  margin-left: auto; /* 👈 alinha para a direita sempre */
 }
+
 
 .burger span {
   width: 25px;
@@ -195,6 +242,11 @@ onUnmounted(() => {
 
 /* Responsividade */
 @media (max-width: 1024px) {
+  .nav {
+    gap: 0.5rem;
+    flex-wrap: nowrap;
+  }
+
   .nav-links {
     display: none;
   }
@@ -202,5 +254,19 @@ onUnmounted(() => {
   .burger {
     display: flex;
   }
+
+  .site-title {
+    font-size: 1rem;
+    max-width: 100%;
+    flex-shrink: 1;
+  }
+
+
+ 
+
 }
+
+
+
+
 </style>

@@ -5,6 +5,7 @@
 
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&family=Cormorant+Garamond:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&display=swap');
 
 
 /* 🎨 Variáveis de Tema */
@@ -21,7 +22,7 @@
 
   --font-base: 'Inter', sans-serif;
   --font-serif: 'Merriweather', serif;
-  --font-cursive: 'Cormorant Garamond', serif;
+  --font-cursive: 'Cinzel', serif;
 
   --radius: 8px;
   --shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
@@ -132,10 +133,7 @@ button:hover,
   color: var(--color-text-light);
 }
 
-.header a:hover,
-.footer a:hover {
-  color: var(--color-hover);
-}
+
 
 
 

@@ -1,6 +1,6 @@
 <template>
   <section id="accueil" class="hero-wrapper" data-aos="fade-up" data-aos-delay="500">
-    <div class="hero" >
+    <div class="hero">
       <div class="hero-content">
         <h2>Traductions<br />& Cours de Langues</h2>
         <p class="subtitle">Portugais ↔ Français</p>
@@ -12,17 +12,15 @@
         </p>
 
         <ul class="highlights">
-          <li>✔ Traductions valables en France et au Brésil</li>
-          <li>✔ Cours personnalisés pour tous niveaux</li>
-          <li>✔ Services rapides et devis gratuits</li>
+          <li><i class="fas fa-file-signature"></i> Traductions valables en France et au Brésil</li>
+          <li><i class="fas fa-chalkboard-user"></i> Cours personnalisés pour tous niveaux</li>
+          <li><i class="fas fa-stopwatch"></i> Services rapides et devis gratuits</li>
         </ul>
 
         <a href="#contact" class="btn">Demander un devis</a>
       </div>
     </div>
   </section>
-
-
 </template>
 
 <style scoped>
@@ -75,16 +73,29 @@ h2 {
   font-size: 1rem;
   margin-bottom: 2rem;
   line-height: 1.6;
+  color: var(--color-text);
 }
 
 .highlights {
   list-style: none;
   padding: 0;
   margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 1rem;
 }
 
 .highlights li {
-  margin: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  justify-content: center;
+}
+
+.highlights i {
+  color: var(--color-black);
+  font-size: 1.8rem;
 }
 
 .btn {
