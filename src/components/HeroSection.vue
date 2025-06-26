@@ -1,40 +1,51 @@
 <template>
-  <section id="accueil" class="hero">
-    <div class="hero-content" data-aos="fade-up">
-      <h2>Traductions<br />& Cours de Langues</h2>
-      <p class="subtitle">Portugais ↔ Français</p>
+  <section id="accueil" class="hero-wrapper" data-aos="fade-up" data-aos-delay="500">
+    <div class="hero" >
+      <div class="hero-content">
+        <h2>Traductions<br />& Cours de Langues</h2>
+        <p class="subtitle">Portugais ↔ Français</p>
 
-      <p class="intro">
-        Claudia Xatara Bonnet est traductrice  
-        et professeure expérimentée de langues depuis plus de 30 ans. 
-        Elle vous accompagne dans vos démarches officielles et votre apprentissage linguistique.
-      </p>
+        <p class="intro">
+          Claudia Xatara Bonnet est traductrice  
+          et professeure expérimentée de langues depuis plus de 30 ans. 
+          Elle vous accompagne dans vos démarches officielles et votre apprentissage linguistique.
+        </p>
 
-      <ul class="highlights">
-        <li>✔ Traductions valables en France et au Brésil</li>
-        <li>✔ Cours personnalisés pour tous niveaux</li>
-        <li>✔ Services rapides et devis gratuits</li>
-      </ul>
+        <ul class="highlights">
+          <li>✔ Traductions valables en France et au Brésil</li>
+          <li>✔ Cours personnalisés pour tous niveaux</li>
+          <li>✔ Services rapides et devis gratuits</li>
+        </ul>
 
-      <a href="#contact" class="btn">Demander un devis</a>
+        <a href="#contact" class="btn">Demander un devis</a>
+      </div>
     </div>
   </section>
+
+
 </template>
 
 <style scoped>
+.hero-wrapper {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .hero {
-  min-height: 100vh;
-  padding: 6rem 2rem 4rem; /* espaçamento no topo para o header fixo */
+  width: 100%;
+  height: 100%;
   background: linear-gradient(
       rgba(255, 255, 255, 0.592),
       rgba(255, 255, 255, 0.92)
     ),
     url('/herobg.png') center/cover no-repeat;
-  color: var(--color-text);
   display: flex;
-  justify-content: center;
   align-items: center;
-  text-align: center;
+  justify-content: center;
+  padding: 4rem 2rem;
 }
 
 .hero-content {
@@ -44,18 +55,18 @@
   border-radius: 1rem;
   max-width: 900px;
   box-shadow: var(--shadow);
+  text-align: center;
 }
 
-.hero-content h2 {
+h2 {
   font-size: 2.5rem;
   font-family: var(--font-serif);
-  margin-bottom: 0.5rem;
   color: var(--color-text);
+  margin-bottom: 1rem;
 }
 
 .subtitle {
   font-size: 1.25rem;
-  font-weight: 500;
   color: var(--color-secondary);
   margin-bottom: 1.5rem;
 }
@@ -63,7 +74,7 @@
 .intro {
   font-size: 1rem;
   margin-bottom: 2rem;
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
 .highlights {
@@ -74,7 +85,6 @@
 
 .highlights li {
   margin: 0.5rem 0;
-  font-size: 1rem;
 }
 
 .btn {

@@ -2,7 +2,7 @@
   <section id="prestations" class="section prestations">
     <h3 data-aos="fade-up">Prestations</h3>
 
-    <div class="prestations-grid">
+    <div class="prestations-grid" data-aos="fade-up">
       <!-- Cours -->
       <div class="card" data-aos="fade-up" data-aos-delay="300">
         <h4>Cours de portugais et français</h4>
@@ -36,7 +36,7 @@
       </div>
 
       <!-- Services -->
-      <div class="card" data-aos="fade-up" data-aos-delay="600">
+      <div class="card" data-aos="fade-up" data-aos-delay="500">
         <h4>Services complémentaires</h4>
         <ul class="card-list">
           <li>Légalisation de signature : 10 €</li>
@@ -50,6 +50,11 @@
 </template>
 
 <style scoped>
+
+.prestations {
+  padding: 6rem 2rem 4rem;
+}
+
 .prestations h3 {
   font-size: 2rem;
   font-family: var(--font-serif);

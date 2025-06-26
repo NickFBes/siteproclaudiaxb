@@ -1,5 +1,6 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
+import { RouterLink } from 'vue-router'
 
 const scrolled = ref(false)
 const menuOpen = ref(false)
@@ -42,26 +43,33 @@ onUnmounted(() => {
 
       <!-- Links desktop -->
       <ul class="nav-links">
-        <li><a href="#accueil">Accueil</a></li>
-        <li><a href="#apropos">À propos</a></li>
-        <li><a href="#le-portugais">Le Portugais</a></li>
-        <li><a href="#prestations">Prestations</a></li>
-        <li><a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?metodo=apresentar&id=K4762383T4" target="_blank">CV</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><RouterLink to="/">Accueil</RouterLink></li>
+        <li><RouterLink to="/portugais">Le Portugais</RouterLink></li>
+        <li><RouterLink to="/prestations">Prestations</RouterLink></li>
+        <li>
+          <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?metodo=apresentar&id=K4762383T4" target="_blank">
+            CV
+          </a>
+        </li>
+        <li><RouterLink to="/contact">Contact</RouterLink></li>
       </ul>
     </nav>
 
     <!-- Menu mobile -->
     <ul v-if="menuOpen" class="nav-mobile">
-      <li><a href="#accueil" @click="toggleMenu">Accueil</a></li>
-      <li><a href="#apropos" @click="toggleMenu">À propos</a></li>
-      <li><a href="#le-portugais" @click="toggleMenu">Le Portugais</a></li>
-      <li><a href="#prestations" @click="toggleMenu">Prestations</a></li>
-      <li><a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?metodo=apresentar&id=K4762383T4" target="_blank" @click="toggleMenu">CV</a></li>
-      <li><a href="#contact" @click="toggleMenu">Contact</a></li>
+      <li><RouterLink to="/" @click="toggleMenu">Accueil</RouterLink></li>
+      <li><RouterLink to="/portugais" @click="toggleMenu">Le Portugais</RouterLink></li>
+      <li><RouterLink to="/prestations" @click="toggleMenu">Prestations</RouterLink></li>
+      <li>
+        <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?metodo=apresentar&id=K4762383T4" target="_blank" @click="toggleMenu">
+          CV
+        </a>
+      </li>
+      <li><RouterLink to="/contact" @click="toggleMenu">Contact</RouterLink></li>
     </ul>
   </header>
 </template>
+
 
 <style scoped>
 .header {

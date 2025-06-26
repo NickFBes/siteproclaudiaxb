@@ -36,6 +36,10 @@
 </template>
 
 <style scoped>
+.le-portugais {
+  padding: 6rem 2rem 4rem;
+}
+
 .le-portugais h3 {
   font-size: 2rem;
   font-family: var(--font-serif);
