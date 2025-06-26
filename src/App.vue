@@ -232,6 +232,7 @@ onUnmounted(() => {
   position: fixed;
   top: 0;
   left: 0;
+  height: 68px;
   width: 100%;
   z-index: 50;
   background-color: rgba(0, 151, 57, 0.9); /* var(--color-primary) com opacidade */
@@ -267,14 +268,11 @@ onUnmounted(() => {
 }
 
 .nav-links a {
-  color: var(--color-white);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
-.nav-links a:hover {
-  color: var(--color-hover);
-}
+
 
 /* Botão hambúrguer */
 /* Ícone burger */
@@ -376,7 +374,7 @@ onUnmounted(() => {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 4rem 2rem;
+  padding: 6rem 2rem;
   text-align: center;
 }
 
