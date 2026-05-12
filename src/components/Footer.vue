@@ -1,6 +1,6 @@
 <template>
   <footer class="footer">
-    <p>&copy; 2025 Claudia Xatara Bonnet. Tous droits réservés.</p>
+    <p>&copy; 2025 Claudia XATARA BONNET. Tous droits réservés.</p>
   </footer>
 </template>
 

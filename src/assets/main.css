@@ -13,8 +13,8 @@
   --color-bg: #fdfdfd;
   --color-text: #1a1a1a;
   --color-text-light: #ffffff;
-  --color-primary: #009739;     /* Verde Brasil mais claro */
-  --color-secondary: #007f33;   /* Verde secundário escuro */
+  --color-primary: rgba(4, 79, 33, 0.9);;     /* Verde Brasil mais claro */
+  --color-secondary: #00a341;   /* Verde secundário escuro */
   --color-hover: #f9d45c;       /* Dourado elegante */
 
   --color-white: #ffffff;

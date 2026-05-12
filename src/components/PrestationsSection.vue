@@ -83,7 +83,7 @@
 
 .card {
   background-color: var(--color-white);
-  border-left: 6px solid var(--color-primary);
+  border-left: 6px solid var(--color-secondary);
   border-radius: 1rem;
   padding: 2rem;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);

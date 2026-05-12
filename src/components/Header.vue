@@ -44,6 +44,7 @@ onUnmounted(() => {
       <!-- Links desktop -->
       <ul class="nav-links">
         <li><RouterLink to="/">Accueil</RouterLink></li>
+        <li><RouterLink to="/apropos">À propos</RouterLink></li>
         <li><RouterLink to="/portugais">Le Portugais</RouterLink></li>
         <li><RouterLink to="/prestations">Prestations</RouterLink></li>
         <li>
@@ -58,6 +59,7 @@ onUnmounted(() => {
     <!-- Menu mobile -->
     <ul v-if="menuOpen" class="nav-mobile">
       <li><RouterLink to="/" @click="toggleMenu">Accueil</RouterLink></li>
+      <li><RouterLink to="/apropos" @click="toggleMenu">À propos</RouterLink></li>
       <li><RouterLink to="/portugais" @click="toggleMenu">Le Portugais</RouterLink></li>
       <li><RouterLink to="/prestations" @click="toggleMenu">Prestations</RouterLink></li>
       <li>
@@ -78,14 +80,14 @@ onUnmounted(() => {
   left: 0;
   width: 100%;
   z-index: 50;
-  background-color: rgba(0, 151, 57, 0.9);
+  background-color: rgba(4, 79, 33, 0.9);
   color: var(--color-white);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s ease;
 }
 
 .header.scrolled {
-  background-color: rgba(0, 151, 57, 1);
+  background-color: rgba(4, 79, 33, 0.9);
 }
 
 .site-title {
@@ -103,8 +105,10 @@ onUnmounted(() => {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 100%;
+  flex: 0 1 auto; /* 👈 evita expandir demais e permite encolher */
+  min-width: 0;   /* 👈 evita a quebra do flexbox */
 }
+
 
 
 .site-title:hover {
@@ -242,9 +246,10 @@ onUnmounted(() => {
 
 /* Responsividade */
 @media (max-width: 1024px) {
-  .nav {
-    gap: 0.5rem;
-    flex-wrap: nowrap;
+  .site-title {
+    font-size: 1rem;
+    flex: 0 1 auto;
+    min-width: 0;
   }
 
   .nav-links {
@@ -253,18 +258,14 @@ onUnmounted(() => {
 
   .burger {
     display: flex;
+    margin-left: auto;
   }
 
-  .site-title {
-    font-size: 1rem;
-    max-width: 100%;
-    flex-shrink: 1;
+  .nav {
+    gap: 0.5rem;
   }
-
-
- 
-
 }
+
 
 
 

@@ -5,6 +5,7 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 
 // Componentes do site
+import Apropos from './components/Apropos.vue'
 import Header from './components/Header.vue'
 import HeroSection from './components/HeroSection.vue'
 import LePortugais from './components/LePortugais.vue'
@@ -14,9 +15,10 @@ import Footer from './components/Footer.vue'
 
 const route = useRoute()
 
-const scrollToSection = () => {
+const scrollToSection = () => { 
   const map = {
     '/': '#accueil',
+    '/apropos': '#apropos',
     '/portugais': '#le-portugais',
     '/prestations': '#prestations',
     '/contact': '#contact'
@@ -52,11 +54,13 @@ watch(route, () => {
 <template>
   <Header />
   <HeroSection />
+  <Apropos />
   <LePortugais />
   <PrestationsSection />
   <ContactSection />
   <Footer />
 </template>
+
 
 <style>
 /* opcional: scroll-behavior para âncoras internas */

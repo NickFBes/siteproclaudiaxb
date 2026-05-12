@@ -30,16 +30,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 2.5rem;
+  padding: 6rem 2rem 4rem;
 }
 
 .hero {
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-      rgba(255, 255, 255, 0.592),
-      rgba(255, 255, 255, 0.92)
-    ),
-    url('/herobg.png') center/cover no-repeat;
+  
   display: flex;
   align-items: center;
   justify-content: center;

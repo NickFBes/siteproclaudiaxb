@@ -40,15 +40,27 @@
           <textarea id="message" rows="5" v-model="form.message" required></textarea>
         </div>
 
-        <button type="submit" class="btn">Envoyer la demande</button>
+        <button type="submit" class="btn" :disabled="isLoading">
+  {{ isLoading ? 'Envoi en cours...' : 'Envoyer la demande' }}
+</button>
+
+<p v-if="successMessage" class="success-message">
+  {{ successMessage }}
+</p>
+
+<p v-if="errorMessage" class="error-message">
+  {{ errorMessage }}
+</p>
       </form>
     </div>
 
   </section>
 </template>
 
+
 <script setup>
 import { ref } from 'vue'
+import emailjs from '@emailjs/browser'
 
 const form = ref({
   fullname: '',
@@ -59,18 +71,52 @@ const form = ref({
   message: ''
 })
 
-const handleSubmit = () => {
-  alert(`Merci ${form.value.fullname}, votre demande a été envoyée !`)
-  form.value = {
-    fullname: '',
-    email: '',
-    phone: '',
-    deadline: '',
-    subject: '',
-    message: ''
+const isLoading = ref(false)
+const successMessage = ref('')
+const errorMessage = ref('')
+
+const handleSubmit = async () => {
+  isLoading.value = true
+  successMessage.value = ''
+  errorMessage.value = ''
+
+  const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID
+  const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+  const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+
+  const templateParams = {
+    fullname: form.value.fullname,
+    email: form.value.email,
+    phone: form.value.phone,
+    deadline: form.value.deadline,
+    subject: form.value.subject,
+    message: form.value.message
+  }
+
+  try {
+    await emailjs.send(serviceId, templateId, templateParams, {
+      publicKey
+    })
+
+    successMessage.value = `Merci ${form.value.fullname}, votre demande a été envoyée !`
+
+    form.value = {
+      fullname: '',
+      email: '',
+      phone: '',
+      deadline: '',
+      subject: '',
+      message: ''
+    }
+  } catch (error) {
+    console.error('Erreur EmailJS:', error)
+    errorMessage.value = "Une erreur est survenue. Veuillez réessayer ou envoyer votre demande par e-mail."
+  } finally {
+    isLoading.value = false
   }
 }
 </script>
+
 
 
 <style scoped>
@@ -88,7 +134,7 @@ const handleSubmit = () => {
 
 .form-card {
   background-color: var(--color-white);
-  border-left: 6px solid var(--color-primary);
+  border-left: 6px solid var(--color-secondary);
   border-radius: 1rem;
   padding: 2rem;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
@@ -144,4 +190,22 @@ select:focus {
   color: var(--color-black);
 }
 
+.btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.success-message {
+  margin-top: 1rem;
+  color: #1f8f4d;
+  font-weight: 600;
+  text-align: center;
+}
+
+.error-message {
+  margin-top: 1rem;
+  color: #c0392b;
+  font-weight: 600;
+  text-align: center;
+}
 </style>

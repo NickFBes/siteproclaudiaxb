@@ -62,6 +62,7 @@
 }
 
 .lusophonie-img {
+  border-left: 6px solid var(--color-secondary);
   margin: 2rem auto;
   max-width: 100%;
   width: 300px;
