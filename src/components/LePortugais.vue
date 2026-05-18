@@ -90,7 +90,7 @@ const { t } = useI18n()
 
 <style scoped>
 .le-portugais {
-  scroll-margin-top: 50px;
+  scroll-margin-top: 20px;
   padding: 6rem 2rem 4rem;
 }
 

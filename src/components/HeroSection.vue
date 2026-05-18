@@ -59,7 +59,7 @@ const goToContact = () => {
 
 <style scoped>
 #accueil {
-  scroll-margin-top: 90px;
+  scroll-margin-top: 20px;
 }
 
 .hero-wrapper {
