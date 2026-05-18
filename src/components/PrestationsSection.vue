@@ -7,22 +7,23 @@
       <div class="card" data-aos="fade-up" data-aos-delay="300">
         <h4>Cours de portugais et français</h4>
         <ul class="card-list">
-          <li>Tous niveaux et objectifs</li>
+          <li>Tous les niveaux et objectifs</li>
           <li>Durée définie par l'élève</li>
-          <li><strong>Individuel</strong> : 30 €/h</li>
-          <li><strong>Duo</strong> : 20 €/h par élève</li>
-          <li><strong>Trio</strong> : 15 €/h par élève</li>
-          <li><strong>Semi-intensif</strong> (2h/jour ou 10h/semaine, 22 jours) : 440 €/mois</li>
-          <li><strong>Intensif</strong> (3h/jour ou 15h/semaine, 22 jours) : 660 €/mois</li>
-          <li>Applications : WhatsApp, E-mail</li>
+          <li><strong>Individuel</strong> : * 30 €/h</li>
+          <li><strong>Duo</strong> : * 20 €/h par élève</li>
+          <li><strong>Trio</strong> : * 15 €/h par élève</li>
+          <li><strong>Semi-intensif</strong> (2h/jour ou 10h/semaine, 22 jours) : * 440 €/mois</li>
+          <li><strong>Intensif</strong> (3h/jour ou 15h/semaine, 22 jours) : *660 €/mois</li>
+          <br>
+          <p><strong>* Prix susceptibles de modification</strong></p>
         </ul>
       </div>
 
       <!-- Traductions -->
       <div class="card" data-aos="fade-up" data-aos-delay="400">
         <h4>Traductions certifiées</h4>
-        <p><strong>Brésil :</strong> 150–200 R$/lauda (1000 caractères)<br /><span class="card-note">JUCESP – São Paulo</span></p>
-        <p><strong>France :</strong> 0,35 €/mot ou 50–60 €/page (250 mots)<br /><span class="card-note">Cour d'appel de Lyon</span></p>
+        <p><strong>Brésil :</strong> * 150–200 R$/lauda (1 lauda = 1000 caractères)<br /><span class="card-note">JUCESP – São Paulo</span></p>
+        <p><strong>France :</strong> * 0,35 €/mot ou 50–60 €/page (1 page = 250 mots)<br /><span class="card-note">Cour d'appel de Lyon</span></p>
         <p class="subtitle">Types de documents :</p>
         <ul class="card-list">
           <li>Actes de naissance, mariage ou décès</li>
@@ -32,6 +33,8 @@
           <li>Demandes de carte de séjour, naturalisation, regroupement familial</li>
           <li>Textes juridiques, scientifiques, littéraires</li>
           <li>Échange de permis de conduire</li>
+          <br>
+          <p><strong>* Prix susceptibles de modification</strong></p>
         </ul>
       </div>
 
@@ -39,10 +42,12 @@
       <div class="card" data-aos="fade-up" data-aos-delay="500">
         <h4>Services complémentaires</h4>
         <ul class="card-list">
-          <li>Légalisation de signature : 10 €</li>
+          <li>Légalisation de signature : * 10 €</li>
           <li>Apostille (via notaires – France, dès 01/05/2025)</li>
-          <li>Transcription audio : 80 €/h d'enregistrement</li>
+          <li>Transcription audio : *80 €/h d'enregistrement</li>
           <li>Assistance administrative et linguistique</li>
+          <br>
+          <p><strong>* Prix susceptibles de modification</strong></p>
         </ul>
       </div>
     </div>

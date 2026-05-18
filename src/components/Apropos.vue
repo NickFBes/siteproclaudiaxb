@@ -8,9 +8,8 @@
         <p>
           Traductrice portugais-français / français-portugais<br/><br/>
           Prof de français et de traduction (université au Brésil) : 1984-2015<br/><br/>
-          Traductrice assermentée BR : depuis 2000<br/><br/>
-          Tradutora juramentada junto ao Tribunal de Apelação/Relação de Lyon : depuis 2021<br/><br/>
-          Traductrice agréée auprès de la Cour d'appel de Lyon : depuis 2001<br/><br/>
+          Traductrice assermentée au Brésil : depuis 2000<br/><br/>
+          Traductrice agréée auprès de la Cour d'appel de Lyon : depuis 2021<br/><br/>
           <em>Traductrice habilitée à effectuer des traductions certifiées.</em><br/><br/>
           <em>Traductions certifiées conformes aux originaux, pour répondre aux exigences légales en France et à l’étranger.</em>
         </p>

@@ -6,14 +6,14 @@
         <p class="subtitle">Portugais ↔ Français</p>
 
         <p class="intro">
-          Claudia Xatara Bonnet est traductrice  
+          Claudia XATARA BONNET est traductrice  
           et professeure expérimentée de langues depuis plus de 30 ans. 
           Elle vous accompagne dans vos démarches officielles et votre apprentissage linguistique.
         </p>
 
         <ul class="highlights">
-          <li><i class="fas fa-file-signature"></i> Traductions valables en France et au Brésil</li>
-          <li><i class="fas fa-chalkboard-user"></i> Cours personnalisés pour tous niveaux</li>
+          <li><i class="fas fa-file-signature"></i> Traductions valables en Europe, au Brésil et au Canada</li>
+          <li><i class="fas fa-chalkboard-user"></i> Cours personnalisés pour tous les niveaux</li>
           <li><i class="fas fa-stopwatch"></i> Services rapides et devis gratuits</li>
         </ul>
 

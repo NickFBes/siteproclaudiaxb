@@ -47,11 +47,6 @@ onUnmounted(() => {
         <li><RouterLink to="/apropos">À propos</RouterLink></li>
         <li><RouterLink to="/portugais">Le Portugais</RouterLink></li>
         <li><RouterLink to="/prestations">Prestations</RouterLink></li>
-        <li>
-          <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?metodo=apresentar&id=K4762383T4" target="_blank">
-            CV
-          </a>
-        </li>
         <li><RouterLink to="/contact">Contact</RouterLink></li>
       </ul>
     </nav>
@@ -62,11 +57,6 @@ onUnmounted(() => {
       <li><RouterLink to="/apropos" @click="toggleMenu">À propos</RouterLink></li>
       <li><RouterLink to="/portugais" @click="toggleMenu">Le Portugais</RouterLink></li>
       <li><RouterLink to="/prestations" @click="toggleMenu">Prestations</RouterLink></li>
-      <li>
-        <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?metodo=apresentar&id=K4762383T4" target="_blank" @click="toggleMenu">
-          CV
-        </a>
-      </li>
       <li><RouterLink to="/contact" @click="toggleMenu">Contact</RouterLink></li>
     </ul>
   </header>
