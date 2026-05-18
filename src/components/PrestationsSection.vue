@@ -1,62 +1,118 @@
 <template>
   <section id="prestations" class="section prestations">
-    <h3 data-aos="fade-up">Prestations</h3>
+    <h3 data-aos="fade-up">
+      {{ t('prestations.title') }}
+    </h3>
 
     <div class="prestations-grid" data-aos="fade-up">
       <!-- Cours -->
       <div class="card" data-aos="fade-up" data-aos-delay="300">
-        <h4>Cours de portugais et français</h4>
+        <h4>{{ t('prestations.courses.title') }}</h4>
+
         <ul class="card-list">
-          <li>Tous les niveaux et objectifs</li>
-          <li>Durée définie par l'élève</li>
-          <li><strong>Individuel</strong> : * 30 €/h</li>
-          <li><strong>Duo</strong> : * 20 €/h par élève</li>
-          <li><strong>Trio</strong> : * 15 €/h par élève</li>
-          <li><strong>Semi-intensif</strong> (2h/jour ou 10h/semaine, 22 jours) : * 440 €/mois</li>
-          <li><strong>Intensif</strong> (3h/jour ou 15h/semaine, 22 jours) : *660 €/mois</li>
-          <br>
-          <p><strong>* Prix susceptibles de modification</strong></p>
+          <li>{{ t('prestations.courses.levels') }}</li>
+          <li>{{ t('prestations.courses.duration') }}</li>
+
+          <li>
+            <strong>{{ t('prestations.courses.individual.label') }}</strong>
+            {{ t('prestations.courses.individual.price') }}
+          </li>
+
+          <li>
+            <strong>{{ t('prestations.courses.duo.label') }}</strong>
+            {{ t('prestations.courses.duo.price') }}
+          </li>
+
+          <li>
+            <strong>{{ t('prestations.courses.trio.label') }}</strong>
+            {{ t('prestations.courses.trio.price') }}
+          </li>
+
+          <li>
+            <strong>{{ t('prestations.courses.semiIntensive.label') }}</strong>
+            {{ t('prestations.courses.semiIntensive.price') }}
+          </li>
+
+          <li>
+            <strong>{{ t('prestations.courses.intensive.label') }}</strong>
+            {{ t('prestations.courses.intensive.price') }}
+          </li>
         </ul>
+
+        <p class="price-note">
+          <strong>{{ t('prestations.priceNote') }}</strong>
+        </p>
       </div>
 
       <!-- Traductions -->
       <div class="card" data-aos="fade-up" data-aos-delay="400">
-        <h4>Traductions certifiées</h4>
-        <p><strong>Brésil :</strong> * 150–200 R$/lauda (1 lauda = 1000 caractères)<br /><span class="card-note">JUCESP – São Paulo</span></p>
-        <p><strong>France :</strong> * 0,35 €/mot ou 50–60 €/page (1 page = 250 mots)<br /><span class="card-note">Cour d'appel de Lyon</span></p>
-        <p class="subtitle">Types de documents :</p>
+        <h4>{{ t('prestations.translations.title') }}</h4>
+
+        <p>
+          <strong>{{ t('prestations.translations.brazil.label') }}</strong>
+          {{ t('prestations.translations.brazil.price') }}
+          <br />
+          <span class="card-note">
+            {{ t('prestations.translations.brazil.note') }}
+          </span>
+        </p>
+
+        <p>
+          <strong>{{ t('prestations.translations.france.label') }}</strong>
+          {{ t('prestations.translations.france.price') }}
+          <br />
+          <span class="card-note">
+            {{ t('prestations.translations.france.note') }}
+          </span>
+        </p>
+
+        <p class="subtitle">
+          {{ t('prestations.translations.documentTypesTitle') }}
+        </p>
+
         <ul class="card-list">
-          <li>Actes de naissance, mariage ou décès</li>
-          <li>Passeports, cartes d'identité</li>
-          <li>Contrats, jugements, diplômes</li>
-          <li>Documents notariés, médicaux, professionnels</li>
-          <li>Demandes de carte de séjour, naturalisation, regroupement familial</li>
-          <li>Textes juridiques, scientifiques, littéraires</li>
-          <li>Échange de permis de conduire</li>
-          <br>
-          <p><strong>* Prix susceptibles de modification</strong></p>
+          <li>{{ t('prestations.translations.documents.birth') }}</li>
+          <li>{{ t('prestations.translations.documents.identity') }}</li>
+          <li>{{ t('prestations.translations.documents.contracts') }}</li>
+          <li>{{ t('prestations.translations.documents.notary') }}</li>
+          <li>{{ t('prestations.translations.documents.residence') }}</li>
+          <li>{{ t('prestations.translations.documents.legal') }}</li>
+          <li>{{ t('prestations.translations.documents.driving') }}</li>
         </ul>
+
+        <p class="price-note">
+          <strong>{{ t('prestations.priceNote') }}</strong>
+        </p>
       </div>
 
       <!-- Services -->
       <div class="card" data-aos="fade-up" data-aos-delay="500">
-        <h4>Services complémentaires</h4>
+        <h4>{{ t('prestations.services.title') }}</h4>
+
         <ul class="card-list">
-          <li>Légalisation de signature : * 10 €</li>
-          <li>Apostille (via notaires – France, dès 01/05/2025)</li>
-          <li>Transcription audio : *80 €/h d'enregistrement</li>
-          <li>Assistance administrative et linguistique</li>
-          <br>
-          <p><strong>* Prix susceptibles de modification</strong></p>
+          <li>{{ t('prestations.services.signature') }}</li>
+          <li>{{ t('prestations.services.apostille') }}</li>
+          <li>{{ t('prestations.services.audio') }}</li>
+          <li>{{ t('prestations.services.assistance') }}</li>
         </ul>
+
+        <p class="price-note">
+          <strong>{{ t('prestations.priceNote') }}</strong>
+        </p>
       </div>
     </div>
   </section>
 </template>
 
-<style scoped>
+<script setup>
+import { useI18n } from 'vue-i18n'
 
+const { t } = useI18n()
+</script>
+
+<style scoped>
 .prestations {
+  scroll-margin-top: 50px;
   padding: 6rem 2rem 4rem;
 }
 
@@ -80,6 +136,7 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
 @media (min-width: 1024px) {
   .prestations-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -133,5 +190,15 @@
 .card-note {
   font-size: 0.8rem;
   color: var(--color-secondary);
+}
+
+.subtitle {
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.price-note {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
 }
 </style>

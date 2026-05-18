@@ -2,28 +2,70 @@
   <section id="accueil" class="hero-wrapper" data-aos="fade-up" data-aos-delay="500">
     <div class="hero">
       <div class="hero-content">
-        <h2>Traductions<br />& Cours de Langues</h2>
-        <p class="subtitle">Portugais ↔ Français</p>
+        <h2>
+          {{ t('hero.titleLine1') }}<br />
+          {{ t('hero.titleLine2') }}
+        </h2>
+
+        <p class="subtitle">
+          {{ t('hero.subtitle') }}
+        </p>
 
         <p class="intro">
-          Claudia XATARA BONNET est traductrice  
-          et professeure expérimentée de langues depuis plus de 30 ans. 
-          Elle vous accompagne dans vos démarches officielles et votre apprentissage linguistique.
+          {{ t('hero.intro') }}
         </p>
 
         <ul class="highlights">
-          <li><i class="fas fa-file-signature"></i> Traductions valables en Europe, au Brésil et au Canada</li>
-          <li><i class="fas fa-chalkboard-user"></i> Cours personnalisés pour tous les niveaux</li>
-          <li><i class="fas fa-stopwatch"></i> Services rapides et devis gratuits</li>
+          <li>
+            <i class="fas fa-file-signature"></i>
+            {{ t('hero.highlights.translations') }}
+          </li>
+
+          <li>
+            <i class="fas fa-chalkboard-user"></i>
+            {{ t('hero.highlights.courses') }}
+          </li>
+
+          <li>
+            <i class="fas fa-stopwatch"></i>
+            {{ t('hero.highlights.fast') }}
+          </li>
         </ul>
 
-        <a href="#contact" class="btn">Demander un devis</a>
+        <a href="#contact" class="btn" @click.prevent="goToContact">
+          {{ t('hero.button') }}
+        </a>
       </div>
     </div>
   </section>
 </template>
 
+<script setup>
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
+
+const goToContact = () => {
+  const contactSection = document.getElementById('contact')
+
+  if (contactSection) {
+    contactSection.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    })
+  }
+}
+</script>
+
 <style scoped>
+#accueil {
+  scroll-margin-top: 50px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 .hero-wrapper {
   height: 100vh;
   overflow: hidden;
@@ -37,7 +79,6 @@
 .hero {
   width: 100%;
   height: 100%;
-  
   display: flex;
   align-items: center;
   justify-content: center;

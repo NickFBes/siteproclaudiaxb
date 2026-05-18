@@ -1,42 +1,96 @@
 <template>
   <section id="le-portugais" class="section le-portugais">
-    <h3 data-aos="fade-up">Le Portugais</h3>
+    <h3 data-aos="fade-up">
+      {{ t('lePortugais.title') }}
+    </h3>
 
     <div class="langue-description" data-aos="fade-up" data-aos-delay="300">
       <p>
-        Le portugais est la langue officielle de plus de <strong>260 millions</strong> de personnes
-        à travers le monde. C’est la <strong>5e langue la plus utilisée sur Internet</strong>.
+        {{ t('lePortugais.paragraphOne.beforeNumber') }}
+        <strong>{{ t('lePortugais.paragraphOne.number') }}</strong>
+        {{ t('lePortugais.paragraphOne.afterNumber') }}
+        <strong>{{ t('lePortugais.paragraphOne.internet') }}</strong>.
       </p>
+
       <p>
-        Elle est parlée dans <strong>9 pays membres de l’ONU</strong> et dans <strong>1 région administrative spéciale</strong>
-        de la République populaire de Chine.
+        {{ t('lePortugais.paragraphTwo.beforeCountries') }}
+        <strong>{{ t('lePortugais.paragraphTwo.countries') }}</strong>
+        {{ t('lePortugais.paragraphTwo.middle') }}
+        <strong>{{ t('lePortugais.paragraphTwo.region') }}</strong>
+        {{ t('lePortugais.paragraphTwo.afterRegion') }}
       </p>
 
       <img
         src="/portugaisimg2.png"
-        alt="Carte des pays lusophones"
+        :alt="t('lePortugais.imageAlt')"
         class="lusophonie-img"
         loading="lazy"
       />
 
       <ul class="liste-pays">
-        <li><img src="https://flagcdn.com/ao.svg" width="25" alt="Angola" /> Angola</li>
-        <li><img src="https://flagcdn.com/br.svg" width="25" alt="Brésil" /> Brésil</li>
-        <li><img src="https://flagcdn.com/cv.svg" width="25" alt="Cap-Vert" /> Cap-Vert</li>
-        <li><img src="https://flagcdn.com/gq.svg" width="25" alt="Guinée équatoriale" /> Guinée équatoriale</li>
-        <li><img src="https://flagcdn.com/gw.svg" width="25" alt="Guinée-Bissau" /> Guinée-Bissau</li>
-        <li><img src="https://flagcdn.com/mo.svg" width="25" alt="Macao" /> Macao</li>
-        <li><img src="https://flagcdn.com/mz.svg" width="25" alt="Mozambique" /> Mozambique</li>
-        <li><img src="https://flagcdn.com/pt.svg" width="25" alt="Portugal" /> Portugal</li>
-        <li><img src="https://flagcdn.com/st.svg" width="25" alt="São Tomé et Príncipe" /> São Tomé et Príncipe</li>
-        <li><img src="https://flagcdn.com/tl.svg" width="25" alt="Timor-Leste" /> Timor-Leste</li>
+        <li>
+          <img src="https://flagcdn.com/ao.svg" width="25" :alt="t('lePortugais.countries.angola')" />
+          {{ t('lePortugais.countries.angola') }}
+        </li>
+
+        <li>
+          <img src="https://flagcdn.com/br.svg" width="25" :alt="t('lePortugais.countries.brazil')" />
+          {{ t('lePortugais.countries.brazil') }}
+        </li>
+
+        <li>
+          <img src="https://flagcdn.com/cv.svg" width="25" :alt="t('lePortugais.countries.capeVerde')" />
+          {{ t('lePortugais.countries.capeVerde') }}
+        </li>
+
+        <li>
+          <img src="https://flagcdn.com/gq.svg" width="25" :alt="t('lePortugais.countries.equatorialGuinea')" />
+          {{ t('lePortugais.countries.equatorialGuinea') }}
+        </li>
+
+        <li>
+          <img src="https://flagcdn.com/gw.svg" width="25" :alt="t('lePortugais.countries.guineaBissau')" />
+          {{ t('lePortugais.countries.guineaBissau') }}
+        </li>
+
+        <li>
+          <img src="https://flagcdn.com/mo.svg" width="25" :alt="t('lePortugais.countries.macao')" />
+          {{ t('lePortugais.countries.macao') }}
+        </li>
+
+        <li>
+          <img src="https://flagcdn.com/mz.svg" width="25" :alt="t('lePortugais.countries.mozambique')" />
+          {{ t('lePortugais.countries.mozambique') }}
+        </li>
+
+        <li>
+          <img src="https://flagcdn.com/pt.svg" width="25" :alt="t('lePortugais.countries.portugal')" />
+          {{ t('lePortugais.countries.portugal') }}
+        </li>
+
+        <li>
+          <img src="https://flagcdn.com/st.svg" width="25" :alt="t('lePortugais.countries.saoTome')" />
+          {{ t('lePortugais.countries.saoTome') }}
+        </li>
+
+        <li>
+          <img src="https://flagcdn.com/tl.svg" width="25" :alt="t('lePortugais.countries.timor')" />
+          {{ t('lePortugais.countries.timor') }}
+        </li>
       </ul>
     </div>
   </section>
 </template>
 
+<script setup>
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
+</script>
+
 <style scoped>
 .le-portugais {
+  scroll-margin-top: 50px;
   padding: 6rem 2rem 4rem;
 }
 
@@ -82,5 +136,11 @@
   list-style: none;
   font-weight: 600;
   font-size: 1rem;
+}
+
+.liste-pays li {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
 }
 </style>

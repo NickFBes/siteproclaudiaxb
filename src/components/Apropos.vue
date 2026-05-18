@@ -1,25 +1,46 @@
 <template>
   <section id="apropos" class="section apropos">
-    <h3 class="section-title" data-aos="fade-up">À propos</h3>
+    <h3 class="section-title" data-aos="fade-up">
+      {{ t('apropos.title') }}
+    </h3>
+
     <div class="apropos-box" data-aos="fade-up" data-aos-delay="200">
-      <img src="/fotoclaudia.jpg" alt="Claudia Xatara Bonnet" class="apropos-photo" />
+      <img
+        src="/fotoclaudia.jpg"
+        :alt="t('apropos.imageAlt')"
+        class="apropos-photo"
+      />
+
       <div class="apropos-text">
-        <h4>Claudia XATARA BONNET</h4>
+        <h4>{{ t('apropos.name') }}</h4>
+
         <p>
-          Traductrice portugais-français / français-portugais<br/><br/>
-          Prof de français et de traduction (université au Brésil) : 1984-2015<br/><br/>
-          Traductrice assermentée au Brésil : depuis 2000<br/><br/>
-          Traductrice agréée auprès de la Cour d'appel de Lyon : depuis 2021<br/><br/>
-          <em>Traductrice habilitée à effectuer des traductions certifiées.</em><br/><br/>
-          <em>Traductions certifiées conformes aux originaux, pour répondre aux exigences légales en France et à l’étranger.</em>
+          {{ t('apropos.description.role') }}<br /><br />
+
+          {{ t('apropos.description.professor') }}<br /><br />
+
+          {{ t('apropos.description.swornBrazil') }}<br /><br />
+
+          {{ t('apropos.description.swornFrance') }}<br /><br />
+
+          <em>{{ t('apropos.description.certifiedOne') }}</em><br /><br />
+
+          <em>{{ t('apropos.description.certifiedTwo') }}</em>
         </p>
       </div>
     </div>
   </section>
 </template>
 
+<script setup>
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
+</script>
+
 <style scoped>
 .apropos {
+  scroll-margin-top: 50px;
   padding: 6rem 2rem 4rem;
   margin-top: 2.5rem;
 }

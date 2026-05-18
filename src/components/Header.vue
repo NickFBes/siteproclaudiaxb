@@ -1,6 +1,9 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 import { RouterLink } from 'vue-router'
+import { useI18n } from 'vue-i18n'
+
+const { t, locale } = useI18n()
 
 const scrolled = ref(false)
 const menuOpen = ref(false)
@@ -13,6 +16,11 @@ const toggleMenu = () => {
   menuOpen.value = !menuOpen.value
 }
 
+const changeLanguage = (lang) => {
+  locale.value = lang
+  menuOpen.value = false
+}
+
 const handleResize = () => {
   if (window.innerWidth > 768) {
     menuOpen.value = false
@@ -23,6 +31,7 @@ onMounted(() => {
   window.addEventListener('scroll', handleScroll)
   window.addEventListener('resize', handleResize)
 })
+
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
   window.removeEventListener('resize', handleResize)
@@ -32,36 +41,84 @@ onUnmounted(() => {
 <template>
   <header :class="['header', { scrolled }]">
     <nav class="nav">
-      <div class="site-title">Claudia XATARA BONNET | Traductrice</div>
-
-      <!-- Botão menu burger -->
-      <button class="burger" @click="toggleMenu">
-        <span :class="{ open: menuOpen }"></span>
-        <span :class="{ open: menuOpen }"></span>
-        <span :class="{ open: menuOpen }"></span>
-      </button>
+      <div class="site-title">
+        {{ t('brand.title') }}
+      </div>
 
       <!-- Links desktop -->
       <ul class="nav-links">
-        <li><RouterLink to="/">Accueil</RouterLink></li>
-        <li><RouterLink to="/apropos">À propos</RouterLink></li>
-        <li><RouterLink to="/portugais">Le Portugais</RouterLink></li>
-        <li><RouterLink to="/prestations">Prestations</RouterLink></li>
-        <li><RouterLink to="/contact">Contact</RouterLink></li>
+        <li><RouterLink to="/">{{ t('nav.home') }}</RouterLink></li>
+        <li><RouterLink to="/apropos">{{ t('nav.about') }}</RouterLink></li>
+        <li><RouterLink to="/portugais">{{ t('nav.portuguese') }}</RouterLink></li>
+        <li><RouterLink to="/prestations">{{ t('nav.services') }}</RouterLink></li>
+        <li><RouterLink to="/contact">{{ t('nav.contact') }}</RouterLink></li>
       </ul>
+
+      <div class="header-actions">
+        <!-- Tradutor -->
+        <div class="language-switcher">
+          <button
+            type="button"
+            class="lang-btn"
+            :class="{ active: locale === 'fr' }"
+            @click="changeLanguage('fr')"
+          >
+            <img src="https://flagcdn.com/fr.svg" width="20" alt="France" />
+          </button>
+
+          <span>|</span>
+
+          <button
+            type="button"
+            class="lang-btn"
+            :class="{ active: locale === 'pt' }"
+            @click="changeLanguage('pt')"
+          >
+            <img src="https://flagcdn.com/br.svg" width="20" alt="Brésil" />
+          </button>
+        </div>
+
+        <!-- Botão menu burger -->
+        <button class="burger" @click="toggleMenu">
+          <span :class="{ open: menuOpen }"></span>
+          <span :class="{ open: menuOpen }"></span>
+          <span :class="{ open: menuOpen }"></span>
+        </button>
+      </div>
     </nav>
 
     <!-- Menu mobile -->
     <ul v-if="menuOpen" class="nav-mobile">
-      <li><RouterLink to="/" @click="toggleMenu">Accueil</RouterLink></li>
-      <li><RouterLink to="/apropos" @click="toggleMenu">À propos</RouterLink></li>
-      <li><RouterLink to="/portugais" @click="toggleMenu">Le Portugais</RouterLink></li>
-      <li><RouterLink to="/prestations" @click="toggleMenu">Prestations</RouterLink></li>
-      <li><RouterLink to="/contact" @click="toggleMenu">Contact</RouterLink></li>
+      <li><RouterLink to="/" @click="toggleMenu">{{ t('nav.home') }}</RouterLink></li>
+      <li><RouterLink to="/apropos" @click="toggleMenu">{{ t('nav.about') }}</RouterLink></li>
+      <li><RouterLink to="/portugais" @click="toggleMenu">{{ t('nav.portuguese') }}</RouterLink></li>
+      <li><RouterLink to="/prestations" @click="toggleMenu">{{ t('nav.services') }}</RouterLink></li>
+      <li><RouterLink to="/contact" @click="toggleMenu">{{ t('nav.contact') }}</RouterLink></li>
+
+      <li class="mobile-language">
+        <button
+          type="button"
+          class="lang-btn"
+          :class="{ active: locale === 'fr' }"
+          @click="changeLanguage('fr')"
+        >
+          FR
+        </button>
+
+        <span>|</span>
+
+        <button
+          type="button"
+          class="lang-btn"
+          :class="{ active: locale === 'pt' }"
+          @click="changeLanguage('pt')"
+        >
+          PT
+        </button>
+      </li>
     </ul>
   </header>
 </template>
-
 
 <style scoped>
 .header {
@@ -95,17 +152,14 @@ onUnmounted(() => {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  flex: 0 1 auto; /* 👈 evita expandir demais e permite encolher */
-  min-width: 0;   /* 👈 evita a quebra do flexbox */
+  flex: 0 1 auto;
+  min-width: 0;
 }
-
-
 
 .site-title:hover {
   box-shadow: 0 0 10px var(--color-hover);
   border-color: var(--color-hover);
 }
-
 
 .nav {
   max-width: 1200px;
@@ -116,7 +170,6 @@ onUnmounted(() => {
   justify-content: space-between;
   gap: 1rem;
 }
-
 
 .nav-links {
   display: flex;
@@ -138,7 +191,7 @@ onUnmounted(() => {
   color: var(--color-white);
   text-decoration: none;
   transition: all 0.3s ease;
-  white-space: nowrap; /* 🔒 evita quebra como "Le ↩ Portugais" */
+  white-space: nowrap;
   display: inline-block;
 }
 
@@ -158,8 +211,39 @@ onUnmounted(() => {
   left: 0;
 }
 
+/* Área direita: tradutor + burger */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
 
+/* Tradutor */
+.language-switcher,
+.mobile-language {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--color-white);
+  font-weight: 700;
+}
 
+.lang-btn {
+  border: none;
+  background: transparent;
+  color: var(--color-white);
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0.25rem 0.35rem;
+  border-radius: 0.35rem;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.lang-btn:hover,
+.lang-btn.active {
+  color: var(--color-hover);
+  background-color: rgba(255, 255, 255, 0.1);
+}
 
 /* Botão hamburguer */
 .burger {
@@ -170,9 +254,8 @@ onUnmounted(() => {
   border: none;
   cursor: pointer;
   z-index: 60;
-  margin-left: auto; /* 👈 alinha para a direita sempre */
+  margin-left: auto;
 }
-
 
 .burger span {
   width: 25px;
@@ -185,9 +268,11 @@ onUnmounted(() => {
 .burger span.open:nth-child(1) {
   transform: translateY(10px) rotate(45deg);
 }
+
 .burger span.open:nth-child(2) {
   opacity: 0;
 }
+
 .burger span.open:nth-child(3) {
   transform: translateY(-6px) rotate(-45deg);
 }
@@ -223,11 +308,18 @@ onUnmounted(() => {
   color: var(--color-hover);
 }
 
+.mobile-language {
+  justify-content: center;
+  padding-top: 0.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
     transform: translateY(-5px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -256,8 +348,14 @@ onUnmounted(() => {
   }
 }
 
+@media (max-width: 480px) {
+  .language-switcher {
+    display: none;
+  }
 
-
-
-
+  .site-title {
+    font-size: 0.9rem;
+    max-width: 230px;
+  }
+}
 </style>
