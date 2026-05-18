@@ -102,7 +102,7 @@ onUnmounted(() => {
           :class="{ active: locale === 'fr' }"
           @click="changeLanguage('fr')"
         >
-          FR
+          <img src="https://flagcdn.com/fr.svg" width="20" alt="France" />
         </button>
 
         <span>|</span>
@@ -113,7 +113,7 @@ onUnmounted(() => {
           :class="{ active: locale === 'pt' }"
           @click="changeLanguage('pt')"
         >
-          PT
+         <img src="https://flagcdn.com/br.svg" width="20" alt="Brésil" />
         </button>
       </li>
     </ul>
