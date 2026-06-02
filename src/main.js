@@ -122,7 +122,7 @@ const messages = {
 
         france: {
           label: 'France :',
-          price: '1 page = 350 mots',
+          price: '1 page = 250 - 350 mots',
           note: 'Cour d’appel de Lyon'
         },
 
