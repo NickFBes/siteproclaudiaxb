@@ -122,7 +122,7 @@ const messages = {
 
         france: {
           label: 'France :',
-          price: ' * 0,35 €/mot ou 50–60 €/page (1 page = 250 mots)',
+          price: '1 page = 350 mots',
           note: 'Cour d’appel de Lyon'
         },
 
@@ -288,7 +288,7 @@ const messages = {
 
         france: {
           label: 'Brasil:',
-          price: ' * 150–200 R$/lauda (1 lauda = 1000 caracteres)',
+          price: '1 lauda = 1000 caracteres',
           note: 'JUCESP – São Paulo'
         },
 
