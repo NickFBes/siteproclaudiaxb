@@ -64,15 +64,7 @@
       >
         <h4>{{ t('prestations.translations.title') }}</h4>
 
-        <p>
-          <strong>{{ t('prestations.translations.brazil.label') }}</strong>
-          {{ t('prestations.translations.brazil.price') }}
-          <br />
-          <span class="card-note">
-            {{ t('prestations.translations.brazil.note') }}
-          </span>
-        </p>
-
+       
         <p>
           <strong>{{ t('prestations.translations.france.label') }}</strong>
           {{ t('prestations.translations.france.price') }}
@@ -113,9 +105,7 @@
 
         <ul class="card-list">
           <li>{{ t('prestations.services.signature') }}</li>
-          <li>{{ t('prestations.services.apostille') }}</li>
           <li>{{ t('prestations.services.audio') }}</li>
-          <li>{{ t('prestations.services.assistance') }}</li>
         </ul>
 
         <p class="price-note">

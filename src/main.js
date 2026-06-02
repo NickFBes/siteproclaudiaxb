@@ -118,11 +118,7 @@ const messages = {
       translations: {
         title: 'Traductions certifiées',
 
-        brazil: {
-          label: 'Brésil :',
-          price: ' * 150–200 R$/lauda (1 lauda = 1000 caractères)',
-          note: 'JUCESP – São Paulo'
-        },
+        
 
         france: {
           label: 'France :',
@@ -145,10 +141,10 @@ const messages = {
 
       services: {
         title: 'Services complémentaires',
-        signature: 'Légalisation de signature : * 10 €',
-        apostille: 'Apostille via notaires en France, dès le 01/05/2025',
-        audio: 'Transcription audio : * 80 €/h d’enregistrement',
-        assistance: 'Assistance administrative et linguistique'
+        signature: 'Légalisation de signature',
+
+        audio: 'Transcription audio',
+        
       }
     },
 
@@ -290,17 +286,13 @@ const messages = {
       translations: {
         title: 'Traduções certificadas',
 
-        brazil: {
+        france: {
           label: 'Brasil:',
           price: ' * 150–200 R$/lauda (1 lauda = 1000 caracteres)',
           note: 'JUCESP – São Paulo'
         },
 
-        france: {
-          label: 'França:',
-          price: ' * 0,35 €/palavra ou 50–60 €/página (1 página = 250 palavras)',
-          note: 'Corte de Apelação de Lyon'
-        },
+        
 
         documentTypesTitle: 'Tipos de documentos:',
 
@@ -317,10 +309,9 @@ const messages = {
 
       services: {
         title: 'Serviços complementares',
-        signature: 'Legalização de assinatura: * 10 €',
-        apostille: 'Apostila via cartórios/notários na França, desde 01/05/2025',
-        audio: 'Transcrição de áudio: * 80 €/h de gravação',
-        assistance: 'Assistência administrativa e linguística'
+        signature: 'Legalização de assinatura',
+        audio: 'Transcrição de áudio',
+        
       }
     },
 
