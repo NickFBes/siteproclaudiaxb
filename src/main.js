@@ -211,7 +211,7 @@ const messages = {
         role: 'Tradutora português-francês / francês-português',
         professor: 'Professora de francês e de tradução na universidade no Brasil: 1984-2015',
         swornBrazil: 'Tradutora juramentada no Brasil: desde 2000',
-        swornFrance: 'Tradutora juramentada e perita judicial junto à Corte de Apelação de Lyon: desde 2021',
+        swornFrance: 'Tradutora juramentada e perita judicial junto ao Tribunal de Recursos / Tribunal de Apelação de Lyon: desde 2021',
         certifiedOne: 'Tradutora habilitada a realizar traduções certificadas.',
         certifiedTwo: 'Traduções certificadas conformes aos originais, para atender às exigências legais na França e no exterior.'
       }
